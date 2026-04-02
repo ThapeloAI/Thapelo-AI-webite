@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+  <rect width="220" height="220" rx="24" fill="#f3f4f6"/>
+  <text x="110" y="58" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">SOUTH AFRICAN</text>
+  <circle cx="110" cy="108" r="34" fill="none" stroke="#d7263d" stroke-width="10"/>
+  <circle cx="76" cy="108" r="12" fill="#f4c300"/>
+  <circle cx="144" cy="108" r="12" fill="#2f855a"/>
+  <text x="110" y="158" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">LIBERATION</text>
+  <text x="110" y="182" text-anchor="middle" font-size="18" font-weight="700" fill="#111827">STRUGGLE STORIES</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "VukaStream",
+  "short_name": "VukaStream",
+  "description": "Freedom Was Not Free — telling the story of the South African liberation struggle",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1118",
+  "theme_color": "#d7263d",
+  "icons": [
+    {
+      "src": "/assets/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

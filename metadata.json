@@ -1,8 +1,0 @@
-{
-  "name": "Thapelo AI Portfolio",
-  "description": "A high-end, AI-driven personal portfolio for Thapelo Moloantoa, showcasing advanced automation and media intelligence products under Global AI Media.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
-}

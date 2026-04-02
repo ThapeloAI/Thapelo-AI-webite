@@ -1,17 +1,19 @@
 {
-  "name": "thapelo-ai-portfolio",
+  "name": "vukastream-platform",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server/index.mjs",
+    "test": "node tests/core-flows.test.mjs"
   },
   "dependencies": {
-    "react-dom": "^19.2.4",
     "lucide-react": "^0.564.0",
-    "react": "^19.2.4"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
