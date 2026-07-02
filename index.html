@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thapelo AI | AI-Driven Software Engineer</title>
+    <title>Thapelo AI | AI Product Specialist & Software Engineer</title>
+    <meta name="description" content="Thapelo Moloantoa — AI Product Specialist and Software Engineer. 20+ years digital strategy, 21+ live deployments. Global AI Media, London.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +29,88 @@
         .footer-gradient {
             background: linear-gradient(135deg, #0A2533 0%, #0B2A3A 100%);
         }
-        .glass-header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        .accent-gradient-text {
+            background-clip: text;
         }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.6);
+        }
+
+        /* ── Orb Animations ── */
+        @keyframes orb-drift-1 {
+            0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+            33%       { transform: translateY(-50px) translateX(30px) scale(1.04); }
+            66%       { transform: translateY(25px) translateX(-20px) scale(0.97); }
+        }
+        @keyframes orb-drift-2 {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50%       { transform: translateY(-35px) scale(1.06); }
+        }
+        @keyframes orb-drift-3 {
+            0%, 100% { transform: translateX(0px); }
+            50%       { transform: translateX(40px); }
+        }
+        .orb-1 { animation: orb-drift-1 12s ease-in-out infinite; }
+        .orb-2 { animation: orb-drift-2 9s  ease-in-out infinite; }
+        .orb-3 { animation: orb-drift-3 15s ease-in-out infinite; }
+
+        /* ── Marquee / Ticker ── */
+        @keyframes ticker-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: ticker-scroll 45s linear infinite;
+        }
+        .ticker-track:hover { animation-play-state: paused; }
+
+        /* ── Status dot pulse ── */
+        @keyframes status-pulse {
+            0%, 100% { box-shadow: 0 0 0 0   rgba(34,197,94,0.45); opacity: 1; }
+            50%       { box-shadow: 0 0 0 7px rgba(34,197,94,0);    opacity: 0.7; }
+        }
+        .status-dot { animation: status-pulse 2.2s ease-in-out infinite; }
+
+        /* ── Page transitions ── */
+        @keyframes page-fade-up  { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes page-slide-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-in               { animation: page-fade-up  0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+        .fade-in                  { animation-name: page-fade-up; }
+        .slide-in-from-bottom-8   { animation-name: page-slide-up; }
+        .duration-700             { animation-duration: 0.7s; }
+
+        /* ── Card hover lift ── */
+        .card-lift {
+            transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.32s ease;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px -20px rgba(106,92,255,0.18);
+        }
+
+        /* ── Timeline ── */
+        .timeline-line {
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #E5E7EB 20%, #E5E7EB 80%, transparent);
+        }
+
+        /* Smooth scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #F4F6F8; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+        body { -webkit-font-smoothing: antialiased; }
     </style>
 <script type="importmap">
 {
