@@ -19,10 +19,12 @@ import {
   Code,
   Phone,
   Zap,
-  Filter
+  Filter,
+  Type
 } from 'lucide-react';
 import { ASSETS, PILLARS, PROJECTS, TECH_STACK } from './constants';
 import { Project, Tool } from './types';
+import { TeleprompterApp } from './Teleprompter';
 
 const Header = ({ activePage, setActivePage }: { activePage: string, setActivePage: (p: string) => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +36,7 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'Projects', 'Tech Stack', 'About', 'Contact'];
+  const navItems = ['Home', 'Projects', 'Tech Stack', 'About', 'Contact', 'Teleprompter'];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-header shadow-md py-3' : 'bg-transparent py-5'}`}>
@@ -49,8 +51,8 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
           </div>
         </div>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
+        <nav className="hidden md:flex items-center gap-6">
+          {navItems.filter(i => i !== 'Teleprompter').map((item) => (
             <button
               key={item}
               onClick={() => setActivePage(item)}
@@ -60,6 +62,12 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
             </button>
           ))}
           <div className="h-6 w-[1px] bg-gray-200"></div>
+          <button
+            onClick={() => setActivePage('Teleprompter')}
+            className={`px-4 py-2 text-[13px] font-bold rounded-full border transition-all flex items-center gap-2 ${activePage === 'Teleprompter' ? 'bg-violet-600 text-white border-violet-600' : 'border-violet-200 text-violet-700 hover:bg-violet-50'}`}
+          >
+            <Type className="w-3.5 h-3.5" /> Teleprompter
+          </button>
           <button 
             onClick={() => setActivePage('Contact')}
             className="px-6 py-2.5 accent-gradient-bg text-white text-[13px] font-bold rounded-full hover:shadow-xl transition-all"
@@ -436,8 +444,22 @@ const App = () => {
   const [activePage, setActivePage] = useState('Home');
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (activePage !== 'Teleprompter') window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activePage]);
+
+  if (activePage === 'Teleprompter') {
+    return (
+      <div style={{ position: 'relative' }}>
+        <button
+          onClick={() => setActivePage('Home')}
+          style={{ position: 'fixed', top: 12, left: 12, zIndex: 9999, display: 'flex', alignItems: 'center', gap: 6, padding: '6px 14px', borderRadius: 999, background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}
+        >
+          <X style={{ width: 14, height: 14 }} /> Exit Studio
+        </button>
+        <TeleprompterApp />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen selection:bg-indigo-100 selection:text-indigo-900">
